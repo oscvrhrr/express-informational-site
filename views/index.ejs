@@ -3,9 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Index</title>
+    <title>Document</title>
 </head>
 <body>
-        Hello <%= user %>
+<header style="background-color: rgb(198, 163, 198); border-radius: 5%; display: inline-block;">
+    <a href="/new">
+        add a new message !
+    </a>
+</header>
+<h1>
+    <% messages.map((message) => {  %>
+        <div style="width: 10rem; height: 10rem; background-color: aliceblue; font-size: 1rem; margin: 1rem;">
+            <li><%= message.user%></li>
+            <li><%= message.text%></li>
+            <li><%= message.added%></li>
+        </div>
+    <% }) %>
+</h1>
+    
 </body>
 </html>
