@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-
+const messageController = require('../controllers/messagesController')
 
 
 router.get('/', (req, res) => {
@@ -8,10 +8,7 @@ router.get('/', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-    const {message, author} = req.body
-    const messages = req.app.locals.messages;
-    messages.push({text: message, user: author, added: new Date()});
-    res.redirect('/')
+    messageController.createMessagePost(req, res)
 });
 
 

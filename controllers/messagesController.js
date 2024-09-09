@@ -5,8 +5,15 @@ async function getMessages(req, res) {
     res.render("index", { rows });
 }
 
+async function createMessagePost(req, res) {
+    const { author, message } = req.body
+    await db.createNewMessage(author, message);
+    res.redirect("/")
+}
+
 
 
 module.exports = {
-    getMessages
+    getMessages,
+    createMessagePost,
 }
