@@ -12,11 +12,10 @@
     </a>
 </header>
 <h1>
-    <% messages.map((message) => {  %>
+    <% rows.map((row) => {  %>
         <div style="width: 10rem; height: 10rem; background-color: aliceblue; font-size: 1rem; margin: 1rem;">
-            <li><%= message.user%></li>
-            <li><%= message.text%></li>
-            <li><%= message.added%></li>
+            <li><%= row.author%></li>
+            <li><%= row.message%></li>
         </div>
     <% }) %>
 </h1>
